@@ -43,6 +43,7 @@ export const getPriceDeviation = async (req, res) => {
     const mean = prices.reduce((sum, price) => sum + price, 0) / prices.length;
     const variance = prices.reduce((sum, price) => sum + Math.pow(price - mean, 2), 0) / prices.length;
     const deviation = Math.sqrt(variance);
+    console.log(deviation);
 
     res.json({ deviation: deviation.toFixed(2) });
   } catch (error) {
