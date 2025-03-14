@@ -38,6 +38,7 @@ export const getPriceDeviation = async (req, res) => {
     if (records.length === 0) {
       return res.status(404).json({ error: 'No data found' });
     }
+    console.log(records);
 
     const prices = records.map(record => record.price);
     const mean = prices.reduce((sum, price) => sum + price, 0) / prices.length;
